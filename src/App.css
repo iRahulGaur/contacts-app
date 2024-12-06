@@ -1,0 +1,213 @@
+/* General styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color:linear-gradient(135deg, #f5f7fa, #c3cfe2);;
+  color: #333;
+}
+
+/* App container */
+.app {
+  text-align: start;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+
+/* Dialog Box */
+.dialog {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  text-align: left;
+  transform: translateY(-50px);
+  animation: slideIn 0.3s forwards;
+}
+
+.dialog h2 {
+  margin: 0 0 10px;
+  font-size: 1.5rem;
+}
+
+.dialog p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.close-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 15px;
+}
+
+.close-button:hover {
+  background-color: #d32f2f;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Header styling */
+.header {
+  background-color: #3f51b5;
+  color: #fff;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+/* Search bar styling */
+.search-bar {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #fff;
+  width: 100%;
+  max-width: 600px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.search-bar:focus {
+  box-shadow: 0 0 8px rgba(63, 81, 181, 0.5);
+  outline: none;
+
+}
+
+/* Contacts list */
+.contacts-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  border: 4px solid #ececec;
+}
+
+.separator {
+  width: 1px;
+  background-color: #dcdcdc;
+  height: 50px;
+  margin: 0 15px;
+}
+
+/* Individual contact card */
+.contact-card {
+  cursor: pointer;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.contact-card h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.contact-card p {
+  margin: 5px 0;
+  color: #666;
+  font-size: 1rem;
+}
+
+.contact-card p span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .contacts-list {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .contact-card {
+      padding: 15px;
+  }
+
+  .search-bar {
+      max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+      font-size: 1.4rem;
+  }
+
+  .search-bar {
+      font-size: 0.9rem;
+      padding: 10px;
+  }
+
+  .contact-card h2 {
+      font-size: 1.2rem;
+  }
+
+  .contact-card p {
+      font-size: 0.9rem;
+  }
+}
