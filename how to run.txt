@@ -1,0 +1,8 @@
+steps for installing and running the website =
+
+step 1: open command prompt and run = npm install
+
+step 2: wait for the process to finish and run the following command = npm start
+
+step 2 will run and open a browser with the site running. thanks
+make sure your device have npm installed.
